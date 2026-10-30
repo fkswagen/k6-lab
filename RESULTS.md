@@ -16,12 +16,13 @@
 | Step | Test type | Users | Req/s | p(95) | Max | Failed | Checks |
 |---|---|---:|---:|---:|---:|---:|---|
 | A1 | Smoke | 1 | 0.503822 | 392.77 ms | 399.15 ms | 0.00% (0/18) | 100.00% (24/24) |
-| A2 | Average load | 3 | Not run yet | Not run yet | Not run yet | Not run yet | Not run yet |
+| A2 | Average load | 3 | 1.241752 | 392.73 ms | 10.14 s | 0.00% (0/225) | 100.00% (300/300) |
 | A3 | Stress | 5 | Not run yet | Not run yet | Not run yet | Not run yet | Not run yet |
 | A4 | Spike | 5 | Not run yet | Not run yet | Not run yet | Not run yet | Not run yet |
 | A5 | Soak | 2 | Not run yet | Not run yet | Not run yet | Not run yet | Not run yet |
 
 - A1 details: Command `k6 run a1-smoke.js`; 1 VU for 30s; 6 completed iterations, 0 interrupted; 18 requests at 0.503822 requests/s; `http_req_duration` avg 308.75 ms, p(95) 392.77 ms, max 399.15 ms; 24/24 checks passed; `http_req_failed` 0.00% (0/18); thresholds `checks rate>.99` and `http_req_failed rate<.01` both passed; exit code 0; observed elapsed runtime 35.7 s. Journey issued home, quotes, and recommendation requests per iteration.
+- A2 details: Dashboard command used `K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=reports/a2-average.html K6_WEB_DASHBOARD_OPEN=false K6_WEB_DASHBOARD_PORT=-1 k6 run --out json=C:\Users\ASUS\AppData\Local\Temp\opencode\a2-average-points.json --summary-export C:\Users\ASUS\AppData\Local\Temp\opencode\a2-average-summary.json a2-average.js`. Stages ran 30s to 3 VUs, 2m at 3 VUs, then 30s to 0; 75 iterations and 225 requests at 1.241752 requests/s. `http_req_duration` avg 429.83 ms, p(95) 392.73 ms, max 10.14 s. Checks: 300/300 passed; `http_req_failed` 0.00% (0/225). Group p(95): home 297.99 ms, recommendation 406.89 ms. All thresholds passed; exit code 0; observed elapsed runtime 3m1.2s. Report `reports/a2-average.html` is self-contained, 176,412 bytes. Scheduled duration can be exceeded by graceful completion of in-flight work.
 
 ## Part B
 
