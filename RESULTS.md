@@ -3,7 +3,7 @@
 ## Part 0
 
 - Step 0.1: Completed with k6 version 2.3.0. Command: `k6 run --vus 1 --iterations 1 01-first-test.js`. `http_req_duration`: avg 281.04 ms, min 281.04 ms, med 281.04 ms, max 281.04 ms, p(90) 281.04 ms, p(95) 281.04 ms. Requests: 1 at 0.510923 requests/s. Iterations: 1 at 0.510923 iterations/s. Check result: 1 succeeded (100.00%), 0 failed. Failure rate: `http_req_failed` 0.00% (0/1). Exit code: 0.
-- Step 0.2: Not run yet. Record requests, rate, p(95), and reason.
+- Step 0.2: Command: `k6 run --vus 5 --duration 20s 01-first-test.js`. `http_reqs`: 75 total at 3.548131 requests/s. `http_req_duration`: avg 291.09 ms, p(95) 296.73 ms. Iterations: 75 at 3.548131 iterations/s. Checks: 75 succeeded (100.00%), 0 failed. Failure rate: `http_req_failed` 0.00% (0/75). Exit code: 0. Request rate stayed below 5 requests/s because each VU waits for its response, then `sleep(1)`, plus execution overhead. Approximate throughput is `VUs / (response time + sleep time + overhead)`, but exact observed throughput cannot be derived from average duration alone because scheduling and individual response-time variation also affect it.
 - Step 0.6: Not run yet. Record normal and P95=300 exit codes.
 - Step 0.7: Not run yet. Record rules, p95, p99, changed exit code.
 - Step 0.8: Not run yet. Record bug and checks.
