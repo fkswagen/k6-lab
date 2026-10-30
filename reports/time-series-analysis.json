@@ -1,0 +1,37 @@
+{
+  "step": "A4",
+  "origin_utc": "2026-10-30T16:00:19.7348660Z",
+  "origin_method": "UTC wallclock captured immediately before k6 launch",
+  "metrics": "http_req_duration and http_req_failed point records only",
+  "quantile_method": "Sorted values with linear interpolation at (n - 1) * 0.95",
+  "phase_boundaries_seconds": {
+    "pre-spike": [0, 30],
+    "ramp": [30, 35],
+    "high": [35, 65],
+    "drop": [65, 70],
+    "recovery": [70, 130]
+  },
+  "phases": {
+    "pre-spike": { "count": 15, "p95_ms": 343.36, "error_pct": 0.0 },
+    "ramp": { "count": 7, "p95_ms": 299.74, "error_pct": 0.0 },
+    "high": { "count": 73, "p95_ms": 374.55, "error_pct": 0.0 },
+    "drop": { "count": 13, "p95_ms": 342.71, "error_pct": 0.0 },
+    "recovery": { "count": 32, "p95_ms": 379.62, "error_pct": 0.0 }
+  },
+  "ten_second_buckets": [
+    { "start_s": 0, "end_s": 10, "count": 5, "p95_ms": 326.27, "error_pct": 0.0 },
+    { "start_s": 10, "end_s": 20, "count": 5, "p95_ms": 310.48, "error_pct": 0.0 },
+    { "start_s": 20, "end_s": 30, "count": 5, "p95_ms": 350.65, "error_pct": 0.0 },
+    { "start_s": 30, "end_s": 40, "count": 19, "p95_ms": 359.98, "error_pct": 0.0 },
+    { "start_s": 40, "end_s": 50, "count": 25, "p95_ms": 389.75, "error_pct": 0.0 },
+    { "start_s": 50, "end_s": 60, "count": 25, "p95_ms": 359.81, "error_pct": 0.0 },
+    { "start_s": 60, "end_s": 70, "count": 24, "p95_ms": 353.81, "error_pct": 0.0 },
+    { "start_s": 70, "end_s": 80, "count": 7, "p95_ms": 352.89, "error_pct": 0.0 },
+    { "start_s": 80, "end_s": 90, "count": 5, "p95_ms": 575.27, "error_pct": 0.0 },
+    { "start_s": 90, "end_s": 100, "count": 5, "p95_ms": 296.11, "error_pct": 0.0 },
+    { "start_s": 100, "end_s": 110, "count": 4, "p95_ms": 372.8, "error_pct": 0.0 },
+    { "start_s": 110, "end_s": 120, "count": 5, "p95_ms": 304.12, "error_pct": 0.0 },
+    { "start_s": 120, "end_s": 130, "count": 6, "p95_ms": 363.68, "error_pct": 0.0 }
+  ],
+  "interpretation": "First fully post-drop bucket [70,80) was within 10% of pre-spike p95 (352.89 ms versus 343.36 ms) with no failures. High-phase p95 was 374.55 ms; no material sustained degradation or measurable recovery event was observed. Sparse bucket counts and mixed home, quotes, and recommendation endpoints limit precision."
+}
