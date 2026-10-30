@@ -15,11 +15,13 @@
 
 | Step | Test type | Users | Req/s | p(95) | Max | Failed | Checks |
 |---|---|---:|---:|---:|---:|---:|---|
-| A1 | Smoke | 1 | Not run yet | Not run yet | Not run yet | Not run yet | Not run yet |
+| A1 | Smoke | 1 | 0.503822 | 392.77 ms | 399.15 ms | 0.00% (0/18) | 100.00% (24/24) |
 | A2 | Average load | 3 | Not run yet | Not run yet | Not run yet | Not run yet | Not run yet |
 | A3 | Stress | 5 | Not run yet | Not run yet | Not run yet | Not run yet | Not run yet |
 | A4 | Spike | 5 | Not run yet | Not run yet | Not run yet | Not run yet | Not run yet |
 | A5 | Soak | 2 | Not run yet | Not run yet | Not run yet | Not run yet | Not run yet |
+
+- A1 details: Command `k6 run a1-smoke.js`; 1 VU for 30s; 6 completed iterations, 0 interrupted; 18 requests at 0.503822 requests/s; `http_req_duration` avg 308.75 ms, p(95) 392.77 ms, max 399.15 ms; 24/24 checks passed; `http_req_failed` 0.00% (0/18); thresholds `checks rate>.99` and `http_req_failed rate<.01` both passed; exit code 0; observed elapsed runtime 35.7 s. Journey issued home, quotes, and recommendation requests per iteration.
 
 ## Part B
 
