@@ -11,7 +11,6 @@ const PARAMS = {
 
 export default function () {
   const body = JSON.stringify({
-    mustBeVegetarian: true,
     excludedIngredients: ['Pepperoni'],
     excludedTools: ['Knife']
   });
